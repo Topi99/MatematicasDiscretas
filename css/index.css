@@ -1,0 +1,279 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', serif;
+  color: rgb(20, 20, 20);
+  max-width: 100%;
+}
+
+body, html {
+  background-color: #e6eeff;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+header nav {
+  margin: 0 !important;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  background-color: #9ebefc;
+  font-weight: 500;
+  padding: 15px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+  z-index: 10000;
+}
+
+header section.banner {
+  width: 100%;
+  height: 90vh;
+  padding-top: 10vh;
+  overflow: hidden;
+  display: flex;
+  background-image: url('../img/tf.jpg');
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+  header section.banner article#shadow {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0,0,0,.3);
+    z-index: 1;
+  }
+
+  header section.banner article.banner-text {
+    padding: 40px;
+    text-align: center;
+    font-weight: 500;
+    background-color: rgba(255,255,255,0.2);
+    z-index: 100;
+  }
+
+
+article.banner-text .bigger {
+  font-size: 250%;
+}
+
+main section {
+  padding: 30px;
+}
+
+main section article div {
+  position: relative;
+}
+
+p.description {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45%;
+  min-width: 30%;
+  max-width: 75%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 5px;
+  opacity: 0;
+  transition: .4s ease-out;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  background-color: rgba(255,255,255,0.2);
+  font-size: 1.5em;
+}
+
+p.description a {
+  color: white;
+  text-decoration: none;
+}
+
+p.description a.btn {
+  font-size: .6em !important;
+  font-weight: normal;
+}
+
+article:hover p.description {
+  opacity: 1;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: .4s ease-out;
+  height: 45vh;
+  margin-bottom: 20px;
+}
+
+article:hover .card {
+  box-shadow: 0px 2px 20px 1px rgba(0,0,0,.55);
+  transform: scale(1.01);
+  filter: brightness(60%);
+}
+
+#bann-title {
+  padding: 0;
+  height: 35vh;
+  overflow: hidden;
+  padding-top: 10vh;
+  text-align: center;
+  position: relative;
+}
+
+#bann-title img {
+  width: 100%;
+  filter: grayscale(10%) brightness(60%) blur(2px);
+  transform: scale(1.01);
+  z-index: -100;
+}
+
+#bann-title article {
+  color: white;
+  position: absolute;
+  top: 22vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#bann-title article h2 {
+  color: white;
+}
+
+h2.bigger, h3.bigger, h4.bigger {
+  font-size: 250%;
+  font-weight: 700;
+}
+
+p.bigger {
+  font-size: 150%;
+  font-weight: 700;
+}
+
+h2.even-bigger, h3.even-bigger, h4.even-bigger {
+  font-size: 350%;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.white {
+  color: white;
+}
+
+.btn {
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.btn-prom {
+
+    margin-top: 20px !important;
+}
+
+.btn-prom {
+  background: linear-gradient(45deg, rgb(235, 25, 25), rgb(233, 8, 170));
+  border-radius: 3px;
+  color: white;
+  box-shadow: 0px 1px 3px rgba(0,0,0,.5);
+  -webkit-transition: .4s ease-out;
+}
+
+.btn-prom.btn-anim {
+  margin: 0;
+}
+
+.btn-anim:hover {
+  box-shadow: 0px 1px 6px 2px rgba(0,0,0,.5)
+}
+
+.material-icons.loggin, .material-icons.sc {
+  background-color: #ededed;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.subtitle {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.product {
+  min-height: 60vh;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,.5);
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: white;
+  padding: 0;
+}
+
+  .product-img {
+    background-color: rgb(27, 22, 26);
+    padding: 0;
+  }
+
+  .product-img img {
+    height: 60vh;
+    width: 100%;
+  }
+
+  .product-data {
+    background-color: rgb(27, 22, 26);
+    padding: 15px 25px;
+  }
+    .product-data .product-name,.product-data .product-description {
+      text-align: left;
+      color: white;
+    }
+    .product-data .product-description {
+      padding-top: 20px;
+      font-size: 95%;
+    }
+
+  .product-extra {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+    .product-ofer, .product-props, .product-price {
+      padding: 20px;
+      margin: 0;
+    }
+
+  .product-price {
+    background-color: white;
+    position: absolute;
+    width: 90%;
+    border-radius: 3px;
+    top: -30%;
+  }
+
+.shadow {
+  box-shadow: 0px 2px 15px rgba(0,0,0,.45);
+}
+
+.relative {
+  position: relative;
+  margin: 0;
+}
+
+.padding-top {
+  padding-top: 20px;
+}
