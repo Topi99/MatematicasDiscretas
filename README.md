@@ -1,4 +1,4 @@
-# Matemáicas Discretas
+# Matemáicas Discretas :octocat:
 
 Proyecto del primer parcial de Matemáticas Discretas
 
