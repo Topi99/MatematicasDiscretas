@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="img/logo-b.png">
+    <title>Condicionales</title>
+  </head>
+  <body>
+    <header>
+      <nav class="row middle-xs">
+        <div class="col-sm-4 center-xs"><h1><a href="/">MatesDiscretas</a></h1></div>
+        <div class=" col-sm-6 row center-sm middle-xs">
+          <div class="col-sm">Inicio</div>
+          <div class="col-sm">Tutos</div>
+          <div class="col-sm">Artículos</div>
+          <div class="col-sm">Blog</div>
+          <div class="col-sm">Galería</div>
+          <div class="col-sm">Contacto</div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="bann-title">
+        <img src="img/logic.png" alt="bg">
+        <article>
+          <h2 class="even-bigger">Lógica</h2>
+        </article>
+      </section>
+
+      <section class="row center-xs relative">
+        <article class="detalle lil-shadow col-md-11">
+          <h2 class="subtitle">Aprendamos algo de:</h2>
+          <iframe src="//slides.com/topihernandezmares/deck-3/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <div id="ejercicios" class="detalle--cuerpo">
+            <div>
+              <p>Supongamos que:</p>
+              <ul>
+                <li><p>p: Está caluroso</p></li>
+                <li><p>q: Está soleado</p></li>
+                <li><p>r: Está lluvioso</p></li>
+                <li><p>s: Está humedo</p></li>
+              </ul>
+              <br>
+              <p>Representa:</p>
+              <ol>
+                <br><li><p>Está lluvioso y soleado:
+                  <input type="text" id="1">
+                  <button data-val="¬" data-preg="1" class="btn-prom btn">¬</button>
+                  <button data-val="∧" data-preg="1" class="btn-prom btn">∧</button>
+                  <button data-val="∨" data-preg="1" class="btn-prom btn">∨</button></p></li>
+                  <br><li><p>Esta soleado y no esta caluroso :
+                    <input type="text" id="2">
+                    <button data-val="¬" data-preg="2" class="btn-prom btn">¬</button>
+                    <button data-val="∧" data-preg="2" class="btn-prom btn">∧</button>
+                    <button data-val="∨" data-preg="2" class="btn-prom btn">∨</button></p></li>
+                    <br><li><p>Ni esta soleado ni esta caluroso
+                      <input type="text" id="3">
+                      <button data-val="¬" data-preg="3" class="btn-prom btn">¬</button>
+                      <button data-val="∧" data-preg="3" class="btn-prom btn">∧</button>
+                      <button data-val="∨" data-preg="3" class="btn-prom btn">∨</button></p></li>
+              </ol>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+      $(document).ready(function() {
+        var current, preg, val, field;
+        $('.btn').click(function(e) {
+          current = e.currentTarget;
+          preg = current.dataset.preg;
+          val = current.dataset.val;
+          field = $('#'+preg);
+
+          field.val(field.val()+val);
+          field.focus();
+        })
+
+        $('#enviar').click()
+
+        var getAnswers = () => {
+
+        }
+      })
+    </script>
+  </body>
+</html>
