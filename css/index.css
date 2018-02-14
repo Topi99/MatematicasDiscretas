@@ -225,12 +225,37 @@ button.btn-prom {
   padding: 40px;
 }
   .detalle--cuerpo {
-    text-align: left !important;
+    text-align: left;
     font-weight: bold;
   }
   ul>li, ol>li {
     padding-left: 10px;
   }
+.tab {
+  background-color: rgb(219, 219, 219);
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #9ebefc;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.tab>div {
+  padding: 15px;
+  border: 1px solid rgb(42, 42, 42);
+}
+
+.tab>div>input {
+  width: 100%;
+}
+
+.tab--head {
+  background-color: rgb(124, 124, 124)
+}
 
 .lil-shadow {
   box-shadow: 0px 2px 5px rgba(0,0,0,.45);

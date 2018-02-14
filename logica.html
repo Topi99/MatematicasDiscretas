@@ -90,7 +90,7 @@
 
         var resp, resps = ['r∧q','q ∧ ¬p','¬q ∧ ¬p'];
         let getAnswers = () => {
-            $('.append').remove();
+          $('.append').remove();
           for(var i of [1,2,3]) {
               $('.'+i).append('<span class="append">'+($('#'+i).val()===resps[i-1]).toString()+'</span>');
 

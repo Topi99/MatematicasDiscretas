@@ -35,35 +35,53 @@
       <section class="row center-xs relative">
         <article class="detalle lil-shadow col-md-11">
           <h2 class="subtitle">Aprendamos algo de:</h2>
-          <iframe src="//slides.com/carlossanchez-9/deck/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe src="http://slides.com/carlossanchez-9/deck/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           <div id="ejercicios" class="detalle--cuerpo">
             <div>
-              <p>Supongamos que:</p>
-              <ul>
-                <li><p>p: Está caluroso</p></li>
-                <li><p>q: Está soleado</p></li>
-                <li><p>r: Está lluvioso</p></li>
-                <li><p>s: Está humedo</p></li>
-              </ul>
               <br>
-              <p>Representa:</p>
-              <ol>
-                <br><li><p>Está lluvioso y soleado:
-                  <input type="text" id="1">
-                  <button data-val="¬" data-preg="1" class="btn-prom btn">¬</button>
-                  <button data-val="∧" data-preg="1" class="btn-prom btn">∧</button>
-                  <button data-val="∨" data-preg="1" class="btn-prom btn">∨</button></p></li>
-                  <br><li><p>Esta soleado y no esta caluroso :
-                    <input type="text" id="2">
-                    <button data-val="¬" data-preg="2" class="btn-prom btn">¬</button>
-                    <button data-val="∧" data-preg="2" class="btn-prom btn">∧</button>
-                    <button data-val="∨" data-preg="2" class="btn-prom btn">∨</button></p></li>
-                    <br><li><p>Ni esta soleado ni esta caluroso
-                      <input type="text" id="3">
-                      <button data-val="¬" data-preg="3" class="btn-prom btn">¬</button>
-                      <button data-val="∧" data-preg="3" class="btn-prom btn">∧</button>
-                      <button data-val="∨" data-preg="3" class="btn-prom btn">∨</button></p></li>
-              </ol>
+              <p>Haz la tabla de verdad de (p ∨ q) ∧ (p ∨ ¬q):</p>
+
+              <div class="row tab center-xs">
+                <div class="col-md-2 tab--head">p</div>
+                <div class="col-md-2 tab--head">q</div>
+                <div class="col-md-2 tab--head">p ∨ q</div>
+                <div class="col-md-2 tab--head">¬q</div>
+                <div class="col-md-2 tab--head">p ∨ ¬q</div>
+                <div class="col-md-2 tab--head">(p ∨ q) ∧ (p ∨ ¬q)</div>
+
+                <div class="col-md-2 center-xs">T</div>
+                <div class="col-md-2 center-xs">T</div>
+
+                <div class="col-md-2 "><input id="1" type="text"></div>
+                <div class="col-md-2 "><input id="2" type="text"></div>
+                <div class="col-md-2 "><input id="3" type="text"></div>
+                <div class="col-md-2 "><input id="4" type="text"></div>
+
+                <div class="col-md-2 center-xs">T</div>
+                <div class="col-md-2 center-xs">F</div>
+
+                <div class="col-md-2 "><input id="5" type="text"></div>
+                <div class="col-md-2 "><input id="6" type="text"></div>
+                <div class="col-md-2 "><input id="7" type="text"></div>
+                <div class="col-md-2 "><input id="8" type="text"></div>
+
+                <div class="col-md-2 center-xs">F</div>
+                <div class="col-md-2 center-xs">T</div>
+
+                <div class="col-md-2 "><input id="9" type="text"></div>
+                <div class="col-md-2 "><input id="10" type="text"></div>
+                <div class="col-md-2 "><input id="11" type="text"></div>
+                <div class="col-md-2 "><input id="12" type="text"></div>
+
+                <div class="col-md-2 center-xs">F</div>
+                <div class="col-md-2 center-xs">F</div>
+
+                <div class="col-md-2 "><input id="13" type="text"></div>
+                <div class="col-md-2 "><input id="14" type="text"></div>
+                <div class="col-md-2 "><input id="15" type="text"></div>
+                <div class="col-md-2 "><input id="16" type="text"></div>
+              </div>
+
               <button id="enviar" class="btn btn-prom">Revisar</button>
             </div>
           </div>
@@ -84,14 +102,23 @@
           field.focus();
         })
 
-        $('#enviar').click(getAnswers);
 
-        var resp;
-        var getAnswers = () => {
-          for(var i of [1,2,3]) {
-            console.println(i);
+        var resp, resps = ['T','F','T', 'T', 'T', 'T', 'T', 'T', 'T', 'F', 'F', 'F', 'F', 'T', 'T', 'F' ];
+
+        let getAnswers = () => {
+          for(var i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]) {
+              if($('#'+i).val().toUpperCase()===resps[i-1]) {
+                $('#'+i).css({'background-color':'rgb(191, 255, 126)'});
+                console.log($('#'+i).val());
+                $('#'+i).prop('disabled',true);
+              } else {
+                $('#'+i).css({'background-color':'rgb(255, 179, 179)'});
+                console.log($('#'+i).val());
+              }
           }
         }
+
+        $('#enviar').click(getAnswers);
 
       })
     </script>
