@@ -26,6 +26,34 @@ let getAnswers = () => {
 
 Como output, se agregará una linea de téxto abajo de la pregunta. Si es correcta, será `true`, si no, `false`.
 
+### Ejercicios de Tablas de Verdad
+
+**Input** 
+
+Respuesta correcta o falsa, pueden ser `t`, `T`, `f` o `F`. 
+
+**Process**
+
+```javascript 
+var resp, resps = ['T','F','T', 'T', 'T', 'T', 'T', 'T', 'T', 'F', 'F', 'F', 'F', 'T', 'T', 'F' ];
+
+let getAnswers = () => {
+  for(var i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]) {
+    if($('#'+i).val().replace(/\s+/g, '').toUpperCase()===resps[i-1]) {
+      $('#'+i).css({'background-color':'rgb(191, 255, 126)'});
+      console.log($('#'+i).val());
+      $('#'+i).prop('disabled',true);
+    } else {
+      $('#'+i).css({'background-color':'rgb(255, 179, 179)'});
+      console.log($('#'+i).val());
+    }
+}
+``` 
+
+**Output**
+
+Como output, el input en donde se escribio la respuesta cambiará de color. Si es correcta, será verde y no se podrá modificar. Si es incorrecta, cambiará a rojo y de podrá editar la respuesta.
+
 ## Guía de usuario
 
 1. Esta es la página principal, donde podemos visualizar los menus que tenemos. 
