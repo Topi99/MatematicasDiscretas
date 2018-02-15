@@ -1,14 +1,14 @@
 # Matemáicas Discretas :octocat:
 
-Proyecto del primer parcial de Matemáticas Discretas
+Proyecto del primer parcial de Matemáticas Discretas. Para visitar el sitio/proyecto, de click [aquí](https://topi99.github.io/MatematicasDiscretas/).
 
-## IPO
+## 1. IPO
 
-### Ejercicios de Lógica Matemática
+### 1.1. Ejercicios de Lógica Matemática y Condicionales.
 
 **Input** 
 
-Respuesta correcta (`r∧q`) 
+Cadena de carácteres, puede ser cualquiera, no hay restricción (`p, q, r, s, ∧, ¬, ∨, →`). 
 
 **Process**
 
@@ -26,7 +26,7 @@ let getAnswers = () => {
 
 Como output, se agregará una linea de téxto abajo de la pregunta. Si es correcta, será `true`, si no, `false`.
 
-### Ejercicios de Tablas de Verdad
+### 1.2. Ejercicios de Tablas de Verdad.
 
 **Input** 
 
@@ -54,7 +54,34 @@ let getAnswers = () => {
 
 Como output, el input en donde se escribio la respuesta cambiará de color. Si es correcta, será verde y no se podrá modificar. Si es incorrecta, cambiará a rojo y de podrá editar la respuesta.
 
-## Guía de usuario
+### 1.3. Ejercicios de Equivalencias lógicas y Argumentos.
+
+**Input** 
+
+En estos ejercicios solo hay 2 inputs, que son 2 `radio buttons` por pregunta, uno para cada respuesta, correcta o incorrecta.
+
+**Process**
+
+```javascript 
+var resp, resps = ['¬p ∧ ¬q','r','t'];
+let getAnswers = () => {
+  $('.append').remove();
+  for(var i of [1,2,3]) {
+    resp = $('input[name='+i+']:checked');
+    if(resp.val()===resps[i-1]) {
+      $('label[for="'+i+'"]').append('<span class="append good"> Bien ;D</span>');
+    } else {
+      $('label[for="'+i+'"]').append('<span class="append wrong"> Mal D:</span>');
+    }
+  }
+}
+``` 
+
+**Output**
+
+Como output, se agregará una linea de téxto al lado de la pregunta. Si es correcta, será `Bien ;D`, si no, `Mal D:`.
+
+## 2. Guía de usuario
 
 1. Esta es la página principal, donde podemos visualizar los menus que tenemos. 
 
