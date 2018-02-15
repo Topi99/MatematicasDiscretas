@@ -35,35 +35,32 @@
       <section class="row center-xs relative">
         <article class="detalle lil-shadow col-md-11">
           <h2 class="subtitle">Aprendamos algo de:</h2>
-          <iframe src="//slides.com/topihernandezmares/deck-3/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe src="//slides.com/carlossanchez-9/las-condicionales/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           <div id="ejercicios" class="detalle--cuerpo">
             <div>
               <p>Supongamos que:</p>
               <ul>
-                <li><p>p: Está caluroso</p></li>
-                <li><p>q: Está soleado</p></li>
-                <li><p>r: Está lluvioso</p></li>
-                <li><p>s: Está humedo</p></li>
+                <li><p>p: Hoy es viernes santo.</p></li>
+                <li><p>q: Mañana es día sábado.</p></li>
+                <li><p>YSupongamos que R es p→q</p></li>
               </ul>
               <br>
               <p>Representa:</p>
               <ol>
-                <br><li><p>Está lluvioso y soleado:
+                <br><li class="1"><p>Si mañana no es día sábado, entonces hoy no es viernes santo.Está lluvioso y soleado:
                   <input type="text" id="1">
                   <button data-val="¬" data-preg="1" class="btn-prom btn">¬</button>
-                  <button data-val="∧" data-preg="1" class="btn-prom btn">∧</button>
-                  <button data-val="∨" data-preg="1" class="btn-prom btn">∨</button></p></li>
-                  <br><li><p>Esta soleado y no esta caluroso :
-                    <input type="text" id="2">
-                    <button data-val="¬" data-preg="2" class="btn-prom btn">¬</button>
-                    <button data-val="∧" data-preg="2" class="btn-prom btn">∧</button>
-                    <button data-val="∨" data-preg="2" class="btn-prom btn">∨</button></p></li>
-                    <br><li><p>Ni esta soleado ni esta caluroso
-                      <input type="text" id="3">
-                      <button data-val="¬" data-preg="3" class="btn-prom btn">¬</button>
-                      <button data-val="∧" data-preg="3" class="btn-prom btn">∧</button>
-                      <button data-val="∨" data-preg="3" class="btn-prom btn">∨</button></p></li>
+                  <button data-val="→" data-preg="1" class="btn-prom btn">→</button></p></li>
+                <br><li class="2"><p>Si mañana es día sábado, entonces hoy es viernes santo.
+                  <input type="text" id="2">
+                  <button data-val="¬" data-preg="2" class="btn-prom btn">¬</button>
+                  <button data-val="→" data-preg="2" class="btn-prom btn">→</button></p></li>
+                <br><li class="3"><p>Si hoy no es viernes santo, entonces mañana no es día sábado.
+                  <input type="text" id="3">
+                  <button data-val="¬" data-preg="3" class="btn-prom btn">¬</button>
+                  <button data-val="→" data-preg="3" class="btn-prom btn">→</button></p></li>
               </ol>
+              <button id="enviar" class="btn btn-prom">Revisar</button>
             </div>
           </div>
         </article>
@@ -83,11 +80,15 @@
           field.focus();
         })
 
-        $('#enviar').click()
-
-        var getAnswers = () => {
-
+        var resp, resps = ['¬q→¬p','q→p','¬p→¬q'];
+        let getAnswers = () => {
+          $('.append').remove();
+          for(var i of [1,2,3]) {
+              $('.'+i).append('<span class="append">'+($('#'+i).val().replace(/\s+/g, '')===resps[i-1]).toString()+'</span>')
+          }
         }
+
+        $('#enviar').click(getAnswers);
       })
     </script>
   </body>

@@ -19,6 +19,14 @@ button {
   border: none;
 }
 
+.good {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
 header nav {
   margin: 0 !important;
   width: 100%;

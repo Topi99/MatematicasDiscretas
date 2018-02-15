@@ -92,7 +92,7 @@
         let getAnswers = () => {
           $('.append').remove();
           for(var i of [1,2,3]) {
-              $('.'+i).append('<span class="append">'+($('#'+i).val()===resps[i-1]).toString()+'</span>');
+              $('.'+i).append('<span class="append">'+($('#'+i).val().replace(/\s+/g, '')===resps[i-1]).toString()+'</span>');
 
           }
         }

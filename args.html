@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="img/logo-b.png">
-    <title>Equivalencias</title>
+    <title>Lógica</title>
   </head>
   <body>
     <header>
@@ -26,7 +26,7 @@
 
     <main>
       <section id="bann-title">
-        <img src="img/equal.jpg" alt="bg">
+        <img src="img/logic.png" alt="bg">
         <article>
           <h2 class="even-bigger">Lógica</h2>
         </article>
@@ -35,7 +35,8 @@
       <section class="row center-xs relative">
         <article class="detalle lil-shadow col-md-11">
           <h2 class="subtitle">Aprendamos algo de:</h2>
-          <iframe src="//slides.com/carlossanchez-9/e/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe src="//slides.com/carlossanchez-9/deck-3/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
           <div id="ejercicios" class="detalle--cuerpo">
             <div>
               <br>
@@ -44,24 +45,21 @@
               <ol>
                 <br>
                 <li>
-                  <label for="1">¿Cual es equivalente a ¬(p ∨ q)?</label>
-                  <p><input type="radio" name="1" value="¬p ∧ ¬q">¬p ∧ ¬q</p>
-                  <p><input type="radio" name="1" value="¬p ∨ ¬q">¬p ∨ ¬q</p>
-                  <p><input type="radio" name="1" value="p">p</p>
+                  <label for="1">Si tenemos: H1: p→q, H2: q→r y C: p→r, ¿Es válido el argumento?</label>
+                  <p><input type="radio" name="1" value="v">Válido</p>
+                  <p><input type="radio" name="1" value="i">Inválido</p>
                 </li>
                 <br>
                 <li>
-                  <label for="2">¿Cual es equivalente a (r∧¬p)∨(r∧p)?</label>
-                  <p><input type="radio" name="2" value="r∧(¬p∨p)">r∧(¬p∨p)</p>
-                  <p><input type="radio" name="2" value="r">r</p>
-                  <p><input type="radio" name="2" value="(r∧¬p)∨(r∧p)">(r∧¬p)∨(r∧p)</p>
+                  <label for="2">Si tenemos: H1: p∧q, H2: p→(q→r) y C: q, ¿Es válido?</label>
+                  <p><input type="radio" name="2" value="v">Válido</p>
+                  <p><input type="radio" name="2" value="i">Inválido</p>
                 </li>
                 <br>
                 <li>
-                  <label for="3">¿Cual es equivalente a (t∧(¬(¬t∨q)))∨(t∧q)?</label>
-                  <p><input type="radio" name="3" value="t">t</p>
-                  <p><input type="radio" name="3" value="t∧(¬q∨q)">t∧(¬q∨q)</p>
-                  <p><input type="radio" name="3" value="¬p ∨ ¬t">¬p ∨ ¬t</p>
+                  <label for="3">H1: p∨q, H2: ¬p y C: q, ¿Es válido o no?</label>
+                  <p><input type="radio" name="3" value="v">Válido</p>
+                  <p><input type="radio" name="3" value="i">Inválido</p>
                 </li>
               </ol>
               <button id="enviar" class="btn btn-prom">Revisar</button>
@@ -73,8 +71,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
       $(document).ready(function() {
-
-        var resp, resps = ['¬p ∧ ¬q','r','t'];
+        var resp, resps = ['v','i','v'];
         let getAnswers = () => {
           $('.append').remove();
           for(var i of [1,2,3]) {

@@ -107,7 +107,7 @@
 
         let getAnswers = () => {
           for(var i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]) {
-              if($('#'+i).val().toUpperCase()===resps[i-1]) {
+              if($('#'+i).val().replace(/\s+/g, '').toUpperCase()===resps[i-1]) {
                 $('#'+i).css({'background-color':'rgb(191, 255, 126)'});
                 console.log($('#'+i).val());
                 $('#'+i).prop('disabled',true);
