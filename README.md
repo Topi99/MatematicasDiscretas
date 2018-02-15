@@ -2,6 +2,8 @@
 
 Proyecto del primer parcial de Matemáticas Discretas. Para visitar el sitio/proyecto, de click [aquí](https://topi99.github.io/MatematicasDiscretas/).
 
+Realizado por Topiltzin Hernández Mares y Carlos Alfonso Sánchez Rosales.
+
 ## 1. IPO
 
 ### 1.1. Ejercicios de Lógica Matemática y Condicionales.
