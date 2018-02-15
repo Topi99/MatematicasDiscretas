@@ -2,9 +2,29 @@
 
 Proyecto del primer parcial de Matemáticas Discretas
 
-## Diagrama IPO
+## IPO
 
+### Ejercicios de Lógica Matemática
 
+**Input** 
+
+Respuesta correcta (`r∧q`) 
+
+**Process**
+
+```javascript 
+var resp, resps = ['r∧q','q ∧ ¬p','¬q ∧ ¬p'];
+let getAnswers = () => {
+  $('.append').remove();
+    for(var i of [1,2,3]) {
+      $('.'+i).append('<span class="append">'+($('#'+i).val().replace(/\s+/g, '')===resps[i-1]).toString()+'</span>');
+    }
+  }
+``` 
+
+**Output**
+
+Como output, se agregará una linea de téxto abajo de la pregunta. Si es correcta, será `true`, si no, `false`.
 
 ## Guía de usuario
 
