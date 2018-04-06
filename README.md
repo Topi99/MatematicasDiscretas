@@ -1,12 +1,89 @@
 # Matemáicas Discretas :octocat:
 
-Proyecto del primer parcial de Matemáticas Discretas
+Proyecto del primer parcial de Matemáticas Discretas. Para visitar el sitio/proyecto, de click [aquí](https://topi99.github.io/MatematicasDiscretas/).
 
-## Diagrama IPO
+Realizado por Topiltzin Hernández Mares y Carlos Alfonso Sánchez Rosales.
 
+## 1. IPO
 
+### 1.1. Ejercicios de Lógica Matemática y Condicionales.
 
-## Guía de usuario
+**Input** 
+
+Cadena de carácteres, puede ser cualquiera, no hay restricción (`p, q, r, s, ∧, ¬, ∨, →`). 
+
+**Process**
+
+```javascript 
+var resp, resps = ['r∧q','q ∧ ¬p','¬q ∧ ¬p'];
+let getAnswers = () => {
+  $('.append').remove();
+    for(var i of [1,2,3]) {
+      $('.'+i).append('<span class="append">'+($('#'+i).val().replace(/\s+/g, '')===resps[i-1]).toString()+'</span>');
+    }
+  }
+``` 
+
+**Output**
+
+Como output, se agregará una linea de téxto abajo de la pregunta. Si es correcta, será `true`, si no, `false`.
+
+### 1.2. Ejercicios de Tablas de Verdad.
+
+**Input** 
+
+Respuesta correcta o falsa, pueden ser `t`, `T`, `f` o `F`. 
+
+**Process**
+
+```javascript 
+var resp, resps = ['T','F','T', 'T', 'T', 'T', 'T', 'T', 'T', 'F', 'F', 'F', 'F', 'T', 'T', 'F' ];
+
+let getAnswers = () => {
+  for(var i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]) {
+    if($('#'+i).val().replace(/\s+/g, '').toUpperCase()===resps[i-1]) {
+      $('#'+i).css({'background-color':'rgb(191, 255, 126)'});
+      console.log($('#'+i).val());
+      $('#'+i).prop('disabled',true);
+    } else {
+      $('#'+i).css({'background-color':'rgb(255, 179, 179)'});
+      console.log($('#'+i).val());
+    }
+}
+``` 
+
+**Output**
+
+Como output, el input en donde se escribio la respuesta cambiará de color. Si es correcta, será verde y no se podrá modificar. Si es incorrecta, cambiará a rojo y de podrá editar la respuesta.
+
+### 1.3. Ejercicios de Equivalencias lógicas y Argumentos.
+
+**Input** 
+
+En estos ejercicios solo hay 2 inputs, que son 2 `radio buttons` por pregunta, uno para cada respuesta, correcta o incorrecta.
+
+**Process**
+
+```javascript 
+var resp, resps = ['¬p ∧ ¬q','r','t'];
+let getAnswers = () => {
+  $('.append').remove();
+  for(var i of [1,2,3]) {
+    resp = $('input[name='+i+']:checked');
+    if(resp.val()===resps[i-1]) {
+      $('label[for="'+i+'"]').append('<span class="append good"> Bien ;D</span>');
+    } else {
+      $('label[for="'+i+'"]').append('<span class="append wrong"> Mal D:</span>');
+    }
+  }
+}
+``` 
+
+**Output**
+
+Como output, se agregará una linea de téxto al lado de la pregunta. Si es correcta, será `Bien ;D`, si no, `Mal D:`.
+
+## 2. Guía de usuario
 
 1. Esta es la página principal, donde podemos visualizar los menus que tenemos. 
 
