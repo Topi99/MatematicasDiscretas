@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="img/logo-b.png">
-    <title>Lógica</title>
+    <title>Sucesines Y Sumatorias</title>
   </head>
   <body>
     <header>
@@ -26,17 +26,16 @@
 
     <main>
       <section id="bann-title">
-        <img src="img/logic.png" alt="bg">
+        <img src="img/equal.jpg" alt="bg">
         <article>
-          <h2 class="even-bigger">Lógica</h2>
+          <h2 class="even-bigger">Conjuntos</h2>
         </article>
       </section>
 
       <section class="row center-xs relative">
         <article class="detalle lil-shadow col-md-11">
           <h2 class="subtitle">Aprendamos algo de:</h2>
-          <iframe src="https://slides.com/carlossanchez-9/deck-3/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+          <iframe src="https://slides.com/carlossanchez-9/sucesiones-y-sumatorias/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           <div id="ejercicios" class="detalle--cuerpo">
             <div>
               <br>
@@ -45,21 +44,17 @@
               <ol>
                 <br>
                 <li>
-                  <label for="1">Si tenemos: H1: p→q, H2: q→r y C: p→r, ¿Es válido el argumento?</label>
-                  <p><input type="radio" name="1" value="v">Válido</p>
-                  <p><input type="radio" name="1" value="i">Inválido</p>
+                  <label for="1">Dada la siguiente sucesión, indique su representación abreviada: 1³ + 2³ + 3³ + 4³ + ... + k^3</label>
+                  <p><input type="radio" name="1" value="1"><img src="https://latex.codecogs.com/gif.latex?\sum_{n=3}^{3}&space;n^3" title="\sum_{n=3}^{3} n^3" /></p>
+                  <p><input type="radio" name="1" value="2"><img src="https://latex.codecogs.com/gif.latex?\sum_{n=1}^{k}&space;n^3" title="\sum_{n=1}^{k} n^3" /></p>
+                  <p><input type="radio" name="1" value="3"><img src="https://latex.codecogs.com/gif.latex?\sum_{n=k}^{3}&space;n^3" title="\sum_{n=k}^{3} n^3" /></p>
                 </li>
                 <br>
                 <li>
-                  <label for="2">Si tenemos: H1: p∧q, H2: p→(q→r) y C: q, ¿Es válido?</label>
-                  <p><input type="radio" name="2" value="v">Válido</p>
-                  <p><input type="radio" name="2" value="i">Inválido</p>
-                </li>
-                <br>
-                <li>
-                  <label for="3">H1: p∨q, H2: ¬p y C: q, ¿Es válido o no?</label>
-                  <p><input type="radio" name="3" value="v">Válido</p>
-                  <p><input type="radio" name="3" value="i">Inválido</p>
+                  <label for="2">¿Cuál es la sucesión larga de   <img src="https://latex.codecogs.com/gif.latex?\prod_{n=2}^{4}&space;(n^2&space;-&space;1)" title="\prod_{n=2}^{4} (n^2 - 1)" />?</label>
+                  <p><input type="radio" name="2" value="1">(2²-1)(3³-1)(4⁴-1)</p>
+                  <p><input type="radio" name="2" value="2">(2²-1)(2³-1)(2⁴-1)</p>
+                  <p><input type="radio" name="2" value="3">(2²-1)(3²-1)(4²-1)</p>
                 </li>
               </ol>
               <button id="enviar" class="btn btn-prom">Revisar</button>
@@ -71,10 +66,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
       $(document).ready(function() {
-        var resp, resps = ['v','i','v'];
+
+        var resp, resps = ['2','3'];
         let getAnswers = () => {
           $('.append').remove();
-          for(var i of [1,2,3]) {
+          for(var i of [1,2]) {
             resp = $('input[name='+i+']:checked');
             if(resp.val()===resps[i-1]) {
               $('label[for="'+i+'"]').append('<span class="append good"> Bien ;D</span>');

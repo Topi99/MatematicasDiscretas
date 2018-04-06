@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="img/logo-b.png">
-    <title>Lógica</title>
+    <title>Sucesines Y Sumatorias</title>
   </head>
   <body>
     <header>
@@ -26,17 +26,16 @@
 
     <main>
       <section id="bann-title">
-        <img src="img/logic.png" alt="bg">
+        <img src="img/equal.jpg" alt="bg">
         <article>
-          <h2 class="even-bigger">Lógica</h2>
+          <h2 class="even-bigger">Conjuntos</h2>
         </article>
       </section>
 
       <section class="row center-xs relative">
         <article class="detalle lil-shadow col-md-11">
           <h2 class="subtitle">Aprendamos algo de:</h2>
-          <iframe src="https://slides.com/carlossanchez-9/deck-3/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+          <iframe src="https://slides.com/carlossanchez-9/teoria-de-conjuntos/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           <div id="ejercicios" class="detalle--cuerpo">
             <div>
               <br>
@@ -45,21 +44,17 @@
               <ol>
                 <br>
                 <li>
-                  <label for="1">Si tenemos: H1: p→q, H2: q→r y C: p→r, ¿Es válido el argumento?</label>
-                  <p><input type="radio" name="1" value="v">Válido</p>
-                  <p><input type="radio" name="1" value="i">Inválido</p>
+                  <label for="1">Si A = {c,d,f,i} B = {a,f} C = {c,i} Indique cuál afirmación es verdadera:</label>
+                  <p><input type="radio" name="1" value="1">B ⊆ B</p>
+                  <p><input type="radio" name="1" value="2">B ⊂ B</p>
+                  <p><input type="radio" name="1" value="3">C ⊆ B</p>
                 </li>
                 <br>
                 <li>
-                  <label for="2">Si tenemos: H1: p∧q, H2: p→(q→r) y C: q, ¿Es válido?</label>
-                  <p><input type="radio" name="2" value="v">Válido</p>
-                  <p><input type="radio" name="2" value="i">Inválido</p>
-                </li>
-                <br>
-                <li>
-                  <label for="3">H1: p∨q, H2: ¬p y C: q, ¿Es válido o no?</label>
-                  <p><input type="radio" name="3" value="v">Válido</p>
-                  <p><input type="radio" name="3" value="i">Inválido</p>
+                  <label for="2">Si D = {a,b,e, f},  A = {a,a, f,g,e,g}, C = {f,g,a,e}, B = {f,b,a,e}, seleccione la respuesta correcta: </label>
+                  <p><input type="radio" name="2" value="1">D=C</p>
+                  <p><input type="radio" name="2" value="2">D = A</p>
+                  <p><input type="radio" name="2" value="3">C = A</p>
                 </li>
               </ol>
               <button id="enviar" class="btn btn-prom">Revisar</button>
@@ -71,10 +66,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
       $(document).ready(function() {
-        var resp, resps = ['v','i','v'];
+
+        var resp, resps = ['1','3'];
         let getAnswers = () => {
           $('.append').remove();
-          for(var i of [1,2,3]) {
+          for(var i of [1,2]) {
             resp = $('input[name='+i+']:checked');
             if(resp.val()===resps[i-1]) {
               $('label[for="'+i+'"]').append('<span class="append good"> Bien ;D</span>');
